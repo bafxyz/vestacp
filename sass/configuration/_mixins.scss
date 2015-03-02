@@ -1,0 +1,180 @@
+// Transform mixins
+//==========================================================================
+
+// generic transform
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+       -o-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+// Typography mixins
+//==========================================================================
+
+// Function for converting a px based font-size to rem.
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+
+  // Default font size on html element is 100%, equivalent to 16px;
+
+  @return #{$rem-size}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculate-rem($size);
+}
+
+// Media query
+//==========================================================================
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $breakpoint-mobile) { @content; }
+  } @else
+
+  if $media == mobile-tablet {
+    @media only screen and (max-width: $breakpoint-tablet) { @content; }
+  }  @else
+  if $media == tablet {
+    @media only screen and (min-width: $breakpoint-mobile + 1) and (max-width: $breakpoint-tablet) { @content; }
+  }  @else
+  if $media == tablet-desktop {
+    @media only screen and (min-width: $breakpoint-mobile + 1) { @content; }
+  }  @else
+  if $media == desktop {
+    @media only screen and (min-width: $breakpoint-tablet + 1) { @content; }
+  }
+}
+
+// Breakpoints
+//==========================================================================
+
+@mixin mobile {
+  @include respond-to(mobile) { @content; }
+}
+
+@mixin mobile-tablet {
+  @include respond-to(mobile-tablet) { @content; }
+}
+
+@mixin tablet {
+  @include respond-to(tablet) { @content; }
+}
+
+@mixin tablet-desktop {
+  @include respond-to(tablet-desktop) { @content; }
+}
+
+@mixin desktop {
+  @include respond-to(desktop) { @content; }
+}
+
+
+// Placeholder text color
+//==========================================================================
+
+@mixin placeholder($color: $input-color-placeholder) {
+  &:-moz-placeholder { color: $color; }           // Firefox 4-18
+  &::-moz-placeholder { color: $color; }          // Firefox 19+
+  &:-ms-input-placeholder { color: $color; }      // Internet Explorer 10+
+  &::-webkit-input-placeholder { color: $color; } // Safari and Chrome
+}
+
+// Selection color
+//==========================================================================
+
+$prefixes: ('-moz-', '-webkit-', '');
+
+@mixin selection($color, $background) {
+  @each $prefix in $prefixes {
+    ::#{$prefix}selection {
+      color: $color;
+      background: $background;
+    }
+  }
+}
+
+// User select
+// For selecting text on the page
+//==========================================================================
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select; // IE10+
+          user-select: $select;
+}
+
+// Vertical align
+//==========================================================================
+
+@mixin valign {
+  text-align: center;  // align the inline(-block) elements horizontally
+  font: 0/0 a;         // remove the gap between inline(-block) elements
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle; // vertical alignment of the inline element
+    height: 100%;
+  }
+}
+
+// Vertical align for IE9+
+//==========================================================================
+
+@mixin valignmodern {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%table {
+  display: table;
+}
+
+%table-cell {
+  display: table-cell;
+}
+
+%table-row {
+  display: table-row;
+}

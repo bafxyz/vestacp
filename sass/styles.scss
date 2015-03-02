@@ -1,0 +1,92 @@
+// Jeet grid
+//==========================================================================
+
+@import '../bower_components/jeet/scss/jeet/index';
+
+// Normalize
+//==========================================================================
+
+@import '../bower_components/normalize-scss/_normalize';
+
+// Configuration
+//==========================================================================
+
+@import 'configuration/_variables';
+@import 'configuration/_mixins';
+@import 'configuration/_bem';
+
+// Mobile enhancements
+
+* {
+  // make transparent link selection, adjust last value opacity 0 to 1.0
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+%body-mobile {
+  // prevent callout to copy image, etc when tap to hold
+  -webkit-touch-callout: none;
+
+  // prevent webkit from resizing text to fit
+  -webkit-text-size-adjust: none;
+
+  // prevent copy paste, to allow, change 'none' to 'text'
+  -webkit-user-select: none;
+}
+
+html,
+input,
+textarea,
+select,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Layout styles
+
+html {
+  height: 100%;
+}
+
+body {
+  @extend %body-mobile;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 15px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+label:before {
+  content:"";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: #aaa;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3),
+          0px 1px 0px 0px rgba(255, 255, 255, .8);
+  border-radius: 3px;
+}
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox]:checked + label:before {
+  content:"\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  font-size: 15px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 15px;
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+  <div class="l-header">
+    <a href="/" class="l-logo"></a>
+    <!-- /.l-logo -->
+
+    <div class="l-menu">
+      <div class="l-menu__item"><a href="#">Packages</a></div>
+      <div class="l-menu__item"><a href="#">IP</a></div>
+      <div class="l-menu__item"><a href="#">Graphs</a></div>
+      <div class="l-menu__item"><a href="#">Statistics</a></div>
+      <div class="l-menu__item"><a href="#">Log</a></div>
+      <div class="l-menu__item"><a href="#">Services</a></div>
+      <div class="l-menu__item l-menu__item--active"><a href="#">Updates</a></div>
+      <div class="l-menu__item"><a href="#">File Manager</a></div>
+    </div>
+    <!-- /.l-menu -->
+
+    <div class="l-profile">
+      <div class="l-profile__username">admin</div>
+      <a href="#" class="l-profile__logout">Log Out</a>
+    </div>
+    <!-- /.l-profile -->
+  </div>
+  <!-- /.l-header -->
+  <div class="l-stat">
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">User</div>
+      <ul>
+        <li>users: <span>15</span></li>
+        <li>suspended: <span>2</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col l-stat__col--active">
+      <div class="l-stat__col-title">Web</div>
+      <ul>
+        <li>domains: <span>79</span></li>
+        <li>aliases: <span>86</span></li>
+        <li>suspended: <span>0</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">DNS</div>
+      <ul>
+        <li>domains: <span>5</span></li>
+        <li>records: <span>37</span></li>
+        <li>suspended: <span>8</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">Mail</div>
+      <ul>
+        <li>domains: <span>6</span></li>
+        <li>accounts: <span>122</span></li>
+        <li>suspended: <span>0</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">Cron</div>
+      <ul>
+        <li>jobs: <span>2</span></li>
+        <li>suspended: <span>23</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">DB</div>
+      <ul>
+        <li>databases: <span>3</span></li>
+        <li>suspended: <span>0</span></li>
+      </ul>
+    </div>
+    <div class="l-stat__col">
+      <div class="l-stat__col-title">Backup</div>
+      <ul>
+        <li>backups: <span>15</span></li>
+        <li>suspended: <span>2</span></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.l-stats -->
+
+  <div class="l-sort">
+    <div class="l-sort__col">
+      sort by: Date <i class="l-icon-down-arrow"></i>
+    </div>
+    <div class="l-sort__col">
+      <input id="check1" type="checkbox" name="check" value="check1">
+      <label for="check1">toggle all</label>
+    </div>
+    <div class="l-sort__col">
+      .l-sort__action
+    </div>
+    <div class="l-sort__col"></div>
+  </div>
+  <!-- /.l-sort -->
+</body>
+</html>

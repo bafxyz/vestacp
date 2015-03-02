@@ -1,0 +1,8 @@
+default:
+  - 'sass'
+  - 'autoprefixer'
+  # - 'uncss'
+  - 'coffee'
+dev:
+  - 'default'
+  - 'watch'
