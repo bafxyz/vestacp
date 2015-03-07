@@ -1,22 +1,18 @@
 // Jeet grid
 //==========================================================================
-
 @import '../bower_components/jeet/scss/jeet/index';
 
 // Normalize
 //==========================================================================
-
 @import '../bower_components/normalize-scss/_normalize';
 
 // Configuration
 //==========================================================================
-
 @import 'configuration/_variables';
 @import 'configuration/_mixins';
 @import 'configuration/_bem';
 
 // Mobile enhancements
-
 * {
   // make transparent link selection, adjust last value opacity 0 to 1.0
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -43,7 +39,6 @@ button {
 }
 
 // Layout styles
-
 html {
   height: 100%;
 }
@@ -52,10 +47,26 @@ body {
   @extend %body-mobile;
   font-family: sans-serif;
   overflow-x: hidden;
+  font-size: 14px;
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: #929292;
+}
 
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+// Checkboxes
 label {
   display: inline-block;
   cursor: pointer;
@@ -65,6 +76,7 @@ label {
   font-size: 13px;
   margin-bottom: 10px;
 }
+
 label:before {
   content:"";
   display: inline-block;
@@ -79,9 +91,11 @@ label:before {
           0px 1px 0px 0px rgba(255, 255, 255, .8);
   border-radius: 3px;
 }
+
 input[type=checkbox] {
   display: none;
 }
+
 input[type=checkbox]:checked + label:before {
   content:"\2713";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
@@ -89,4 +103,178 @@ input[type=checkbox]:checked + label:before {
   color: #f3f3f3;
   text-align: center;
   line-height: 15px;
+}
+
+// Layout styles
+
+.l-center {
+  margin: 0 auto;
+  max-width: 998px;
+}
+
+// l-logo
+@include b(l-logo) {
+  background-image: url('../img/sprite@2x.png');
+  background-position: -183px -30px;
+  background-size: 673px auto;
+  background-repeat: no-repeat;
+  width: 74px;
+  height: 27px;
+  display: inline-block;
+  float: left;
+}
+
+// l-header
+@include b(l-header) {
+  background-color: #5d5d5d;
+  padding: 8px 0;
+  border-bottom: 1px solid #858585;
+  overflow: hidden;
+  margin-bottom: 24px;
+
+  a {
+    font-size: 13px;
+  }
+}
+
+// l-menu
+@include b(l-menu) {
+  overflow: hidden;
+  float: left;
+  padding-top: 8px;
+
+  // l-menu__item
+  @include e(item) {
+    float: left;
+    margin-left: 40px;
+
+    a {
+      color: #fff;
+      position: relative;
+
+      &:hover:after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background-image: url('../img/sprite@2x.png');
+        background-size: 673px auto;
+        background-position: -215px -15px;
+      }
+    }
+
+    // l-menu__item--active
+    @include m(active) {
+      a:after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background-image: url('../img/sprite@2x.png');
+        background-size: 673px auto;
+        background-position: -215px -15px;
+      }
+    }
+  }
+}
+
+// l-profile
+@include b(l-profile) {
+  overflow: hidden;
+  float: right;
+  padding-top: 10px;
+
+  // l-profile__username
+  @include e(username) {
+    float: left;
+    color: #a4abad;
+    font-weight: 700;
+  }
+
+  // l-profile__logout
+  @include e(logout) {
+    float: left;
+    color: #fff;
+    margin-left: 40px;
+  }
+}
+
+// l-stat
+@include b(l-stat) {
+  margin: 0 auto;
+  display: table;
+  width: 100%;
+
+  // l-stat__col
+  @include e(col) {
+    display: table-cell;
+    vertical-align: top;
+
+    a {
+      display: inline-block;
+      padding-bottom: 40px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid #fff;
+
+      &:hover {
+        border-bottom: 3px solid #ff8e61;
+      }
+    }
+
+    // l-stat__col--active
+    @include m(active) {
+
+      a {
+        border-bottom: 3px solid #ff8e61;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      color: #b0b4ba;
+      margin-bottom: 10px;
+    }
+
+    span {
+      padding-left: 15px;
+    }
+  }
+
+  // l-stat__col-title
+  @include e(col-title) {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #212134;
+    min-height: 24px;
+
+    // l-stat__col--active
+    @include m(active) {
+      color: #ff6701;
+      font-size: 24px;
+    }
+  }
+}
+
+// .l-separator
+@include b(l-separator) {
+  height: 1px;
+  background-color: #e4e4e4;
+}
+
+
+// .l-sort
+@include b(l-sort) {
+  float: right;
+
+  // .l-sort__col
+  @include e(col) {
+    float: left;
+  }
 }
