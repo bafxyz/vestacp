@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+  <a href="#" class="to-top">
+    <i class="l-icon-to-top"></i>
+  </a>
+  <div class="l-header">
+    <div class="l-center">
+      <a href="/" class="l-logo"></a>
+      <!-- /.l-logo -->
+
+      <div class="l-menu clearfix">
+        <div class="l-menu__item"><a href="#">Packages</a></div>
+        <div class="l-menu__item"><a href="#">IP</a></div>
+        <div class="l-menu__item"><a href="#">Graphs</a></div>
+        <div class="l-menu__item"><a href="#">Statistics</a></div>
+        <div class="l-menu__item"><a href="#">Log</a></div>
+        <div class="l-menu__item"><a href="#">Services</a></div>
+        <div class="l-menu__item l-menu__item--active"><a href="#">Updates</a></div>
+        <div class="l-menu__item"><a href="#">File Manager</a></div>
+      </div>
+      <!-- /.l-menu -->
+
+      <div class="l-profile">
+        <a href="#" class="l-profile__username">admin</a>
+        <a href="#" class="l-profile__logout">Log Out</a>
+      </div>
+      <!-- /.l-profile -->
+    </div>
+  </div>
+  <!-- /.l-header -->
+
+  <div class="l-content">
+    <div class="l-center">
+      <div class="l-stat">
+        <div class="l-stat__col">
+          <a href="#">
+            <p class="l-stat__col-title">User</p>
+            <ul>
+              <li>users: <span>15</span></li>
+              <li>suspended: <span>2</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col l-stat__col--active">
+          <a href="#">
+            <div class="l-stat__col-title l-stat__col-title--active">Web</div>
+            <ul>
+              <li>domains: <span>79</span></li>
+              <li>aliases: <span>86</span></li>
+              <li>suspended: <span>0</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col">
+          <a href="#">
+            <div class="l-stat__col-title">DNS</div>
+            <ul>
+              <li>domains: <span>5</span></li>
+              <li>records: <span>37</span></li>
+              <li>suspended: <span>8</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col">
+          <a href="#">
+            <div class="l-stat__col-title">Mail</div>
+            <ul>
+              <li>domains: <span>6</span></li>
+              <li>accounts: <span>122</span></li>
+              <li>suspended: <span>0</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col">
+          <a href="#">
+            <div class="l-stat__col-title">Cron</div>
+            <ul>
+              <li>jobs: <span>2</span></li>
+              <li>suspended: <span>23</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col">
+          <a href="#">
+            <div class="l-stat__col-title">DB</div>
+            <ul>
+              <li>databases: <span>3</span></li>
+              <li>suspended: <span>0</span></li>
+            </ul>
+          </a>
+        </div>
+        <div class="l-stat__col">
+          <a href="#">
+            <div class="l-stat__col-title">Backup</div>
+            <ul>
+              <li>backups: <span>15</span></li>
+              <li>suspended: <span>2</span></li>
+            </ul>
+          </a>
+        </div>
+      </div>
+      <!-- /.l-stats -->
+    </div>
+
+    <div class="l-separator"></div>
+    <!-- /.l-separator -->
+
+    <div class="l-center">
+      <div class="l-sort clearfix">
+        <a href="#" class="l-sort__create-btn"></a>
+
+        <div class="l-sort-toolbar clearfix">
+          <table>
+            <tr>
+              <td>
+                sort by: <span><b>DATE</b></span> <i class="l-icon-down-arrow media-top"></i>
+              </td>
+              <td>
+                <input id="check1" type="checkbox" name="check" value="check1">
+                <label for="check1" class="check-label">toggle all</label>
+              </td>
+              <td>
+                <div class="l-select">
+                  <select name="" id="">
+                    <option value="">Apply to selected</option>
+                  </select>
+                </div>
+                <a href="#" class="l-sort-toolbar__filter-apply"></a>
+              </td>
+              <td>
+                <a href="#" class="l-sort-toolbar__search"></a>
+              </td>
+            </tr>
+          </table>
+          <!--  -->
+        </div>
+
+      </div>
+      <!-- /.l-sort -->
+    </div>
+
+    <div class="l-separator"></div>
+    <!-- /.l-separator -->
+
+    <div class="l-center">
+      <div class="l-domen">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            reading.com <span>www.reading.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 30%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 70%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+          <div class="actions-panel clearfix">
+            <div class="actions-panel__col actions-panel__favorite"><a href="#">favorite <i></i></a></div>
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            writing.com <span>www.writing.com</span><span>www.painting-writing.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2015
+          </div>
+          <div class="text-center">
+            <i class="l-icon-star"></i>
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            writing.com <span>www.writing.com</span><span>www.painting-writing.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen l-domen--suspended">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            writing.com <span>www.writing.com</span><span>www.painting-writing.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen l-domen--selected">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2" checked="true">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            writing.com <span>www.writing.com</span><span>www.painting-writing.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen l-domen--orange">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+          <div class="text-center">
+            <i class="l-icon-star-orange"></i>
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            writing.com <span>www.writing.com</span><span>www.painting-writing.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+
+      <div class="l-domen l-domen--blue">
+        <div class="l-domen-toolbar clearfix">
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--left">
+            <input id="check2" type="checkbox" name="check" value="check2">
+            <label for="check2" class="check-label"></label>
+          </div>
+          <!-- l-domen-toolbar__col -->
+          <div class="l-domen-toolbar__col l-domen-toolbar__col--right">
+            <div class="actions-panel clearfix">
+              <div class="actions-panel__col actions-panel__edit"><a href="#">edit <i></i></a></div>
+              <div class="actions-panel__col actions-panel__logs"><a href="#">view logs <i></i></a></div>
+              <div class="actions-panel__col actions-panel__suspend"><a href="#">suspend <i></i></a></div>
+              <div class="actions-panel__col actions-panel__delete"><a href="#">delete <i></i></a></div>
+            </div>
+            <!-- /.actiona-panel -->
+          </div>
+          <!-- l-domen-toolbar__col -->
+        </div>
+        <!-- /.l-domen-toolbar -->
+
+        <div class="l-domen__col l-domen__col--left clearfix">
+          <div class="l-domen__date">
+            21 Dec 2014
+          </div>
+          <div class="text-center">
+            <i class="l-icon-star-blue"></i>
+          </div>
+        </div>
+        <!-- /.l-domen__col -->
+        <div class="l-domen__col l-domen__col--right">
+          <div class="l-domen__name">
+            bluegreen.com <span>www.bluegreen.com</span><span>www.blue.com</span>
+          </div>
+          <!-- /.l-domen__name -->
+          <div class="l-domen__ip">
+            179 . 23 . 227 . 5
+          </div>
+          <!-- /.l-domen__ip -->
+          <div class="l-domen__stats">
+            <table>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">
+                      Bandwidth:
+                    </div>
+
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>672</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 10%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Apache Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx S  upport:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>yes</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="disabled">SSL support</div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Nginx Template:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Disk:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right text-right">
+                      <b>8953</b> Mb
+                    </div>
+                  </div>
+                  <div class="l-percent">
+                    <div class="l-percent__fill" style="width: 45%"></div>
+                  </div>
+                  <!-- /.percent -->
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Web Statistics:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>default</b>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="l-domen__stat-cols clearfix">
+                    <div class="l-domen__stat-col l-domen__stat-col--left">Additional FTP:</div>
+                    <div class="l-domen__stat-col l-domen__stat-col--right">
+                      <b>admin_t1</b>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- /.l-domen__stats -->
+        </div>
+        <!-- /.l-domen__col -->
+      </div>
+      <!-- /.l-domen -->
+      <div class="l-separator"></div>
+      <!-- /.l-separator -->
+    </div>
+  </div>
+</body>
+</html>

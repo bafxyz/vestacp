@@ -49,11 +49,16 @@ body {
   overflow-x: hidden;
   font-size: 14px;
   height: 100%;
+  color: #929292;
 }
 
 a {
   text-decoration: none;
   color: #929292;
+}
+
+.disabled {
+  text-decoration: line-through;
 }
 
 .clearfix:before,
@@ -66,43 +71,49 @@ a {
   clear: both;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 // Checkboxes
-label {
+.check-label {
   display: inline-block;
   cursor: pointer;
   position: relative;
-  padding-left: 25px;
-  margin-right: 15px;
-  font-size: 13px;
-  margin-bottom: 10px;
+  line-height: 16px;
+  padding-left: 26px;
 }
 
-label:before {
-  content:"";
-  display: inline-block;
+.check-label:before {
+  content: '';
   width: 16px;
   height: 16px;
-  margin-right: 10px;
   position: absolute;
   left: 0;
-  bottom: 1px;
-  background-color: #aaa;
-  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3),
-          0px 1px 0px 0px rgba(255, 255, 255, .8);
-  border-radius: 3px;
+  top: 0;
+  display: inline-block;
+  background-image: url('../img/sprite.png');
+  background-size: 450px auto;
+  background-repeat: no-repeat;
+  background-position: -232px -9px;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   display: none;
 }
 
-input[type=checkbox]:checked + label:before {
-  content:"\2713";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-  font-size: 15px;
-  color: #f3f3f3;
-  text-align: center;
-  line-height: 15px;
+input[type="checkbox"]:checked + .check-label:before {
+  content: '';
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  background-position: -225px -42px;
+  left: -5px;
+  top: -5px;
 }
 
 // Layout styles
@@ -112,14 +123,18 @@ input[type=checkbox]:checked + label:before {
   max-width: 998px;
 }
 
+.l-content {
+  padding-bottom: 30px;
+}
+
 // l-logo
 @include b(l-logo) {
-  background-image: url('../img/sprite@2x.png');
-  background-position: -183px -30px;
-  background-size: 673px auto;
+  background-image: url('../img/sprite.png');
+  background-position: -59px -94px;
   background-repeat: no-repeat;
-  width: 74px;
-  height: 27px;
+  background-size: 235px auto;
+  width: 73px;
+  height: 26px;
   display: inline-block;
   float: left;
 }
@@ -137,9 +152,20 @@ input[type=checkbox]:checked + label:before {
   }
 }
 
+%l-menu__item--active {
+  position: absolute;
+  content: '';
+  right: -8px;
+  top: -4px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: #d1ea7a;
+  border-radius: 50%;
+}
+
 // l-menu
 @include b(l-menu) {
-  overflow: hidden;
   float: left;
   padding-top: 8px;
 
@@ -153,28 +179,21 @@ input[type=checkbox]:checked + label:before {
       position: relative;
 
       &:hover:after {
-        position: absolute;
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background-image: url('../img/sprite@2x.png');
-        background-size: 673px auto;
-        background-position: -215px -15px;
+        @extend %l-menu__item--active;
+      }
+    }
+
+    // l-menu__item &:active
+    &:active {
+      a:after {
+        @extend %l-menu__item--active;
       }
     }
 
     // l-menu__item--active
     @include m(active) {
       a:after {
-        position: absolute;
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background-image: url('../img/sprite@2x.png');
-        background-size: 673px auto;
-        background-position: -215px -15px;
+        @extend %l-menu__item--active;
       }
     }
   }
@@ -268,13 +287,578 @@ input[type=checkbox]:checked + label:before {
   background-color: #e4e4e4;
 }
 
-
 // .l-sort
 @include b(l-sort) {
-  float: right;
+  padding: 5px 0;
+  position: relative;
 
-  // .l-sort__col
-  @include e(col) {
+  // .l-sort__create-btn
+  @include e(create-btn) {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background-image: url("../img/sprite.png");
+    background-size: 450px auto;
+    background-repeat: no-repeat;
+    background-position: -317px -102px;
+    position: absolute;
+    bottom: -21px;
+    left: 30px;
+
+    &:hover {
+      background-position: -362px -102px;
+    }
+
+    // .l-sort__create-btn & :active
+    &:active {
+      background-position: -406px -102px;
+    }
+
+    // .l-sort__create-btn--active
+    @include m(active) {
+      background-position: -406px -102px;
+    }
+  }
+}
+
+// .l-sort-toolbar
+@include b(l-sort-toolbar) {
+  float: right;
+  padding: 7px 0;
+
+  .l-select {
     float: left;
   }
+
+  td {
+    vertical-align: middle;
+
+    &:first-of-type {
+      padding-right: 40px;
+    }
+
+    &:nth-of-type(2) {
+      padding-right: 60px;
+    }
+
+    &:last-of-type {
+      padding-left: 40px;
+    }
+  }
+
+  // .l-sort-toolbar__filter-apply
+  @include e(filter-apply) {
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #ccc;
+    background-image: url('../img/sprite.png');
+    background-size: 450px auto;
+    background-position: -320px -2px;
+
+    &:hover {
+      background-position: -354px -2px;
+      border-color: #afafac;
+    }
+
+    // .l-sort-toolbar__filter-apply--active
+    @include m(active) {
+      background-position: -389px -2px;
+      border-color: #50bdb5;
+    }
+  }
+
+  // .l-sort-toolbar__search
+  @include e(search) {
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/sprite.png');
+    background-size: 450px auto;
+    background-position: -319px -35px;
+
+    &:hover {
+      background-position: -353px -35px;
+      border-color: #afafac;
+    }
+
+    // .l-sort-toolbar__filter-apply & active
+    &:active {
+      background-position: -388px -35px;
+      border-color: #50bdb5;
+    }
+
+    // .l-sort-toolbar__filter-apply--active
+    @include m(active) {
+      background-position: -388px -35px;
+      border-color: #50bdb5;
+    }
+  }
+
+  // .l-sort-toolbar__filter-apply
+  @include e(filter-apply) {
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #ccc;
+    background-image: url('../img/sprite.png');
+    background-size: 450px auto;
+    background-position: -320px -2px;
+
+    &:hover {
+      background-position: -354px -2px;
+      border-color: #afafac;
+    }
+  }
+}
+
+// .l-select
+@include b(l-select) {
+  width: 178px;
+  height: 26px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  overflow-x: hidden;
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    pointer-events: none;
+    background-image: url('../img/sprite.png');
+    background-position: -245px -175px;
+    width: 7px;
+    height: 4px;
+    margin-top: -2px;
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+  }
+
+  select {
+    border: 0;
+    background-color: transparent;
+    line-height: 26px;
+    height: 26px;
+    min-width: 200px;
+
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+// .l-domen
+@include b(l-domen) {
+  color: #929292;
+  padding: 0 15px;
+
+  &:hover {
+    cursor: pointer;
+
+    .l-domen-toolbar__col--right {
+      display: block;
+    }
+  }
+
+  // .l-domen--orange
+  @include m(orange) {
+    border-left: 2px solid #ff6701;
+  }
+
+  // .l-domen--blue
+  @include m(blue) {
+    border-left: 2px solid #55c9c0;
+  }
+
+  // .l-domen--suspended
+  @include m(suspended) {
+    background-color: #c5c4c3;
+    color: #fff;
+
+    .l-percent {
+      border-color: #fff;
+    }
+
+    .l-percent__fill {
+      background-color: #fff;
+    }
+
+    .l-domen__name {
+
+      &,
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  // .l-domen--selected
+  @include m(selected) {
+    background-color: #d1eddc;
+  }
+
+  label {
+    margin-bottom: 20px;
+  }
+
+  // .l-domen__columns
+  @include e(columns) {
+    display: table;
+    width: 100%;
+  }
+
+  // .l-domen__col
+  @include e(col) {
+    display: table-cell;
+    padding-top: 20px;
+
+    // .l-domen__col--left
+    @include m(left) {
+      width: 120px;
+      padding-right: 10px;
+    }
+  }
+
+  // .l-domen__date
+  @include e(date) {
+    margin-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  // .l-domen__name
+  @include e(name) {
+    color: #343434;
+    text-transform: lowercase;
+    font-size: 32px;
+    margin-bottom: 10px;
+
+    span {
+      color: #929292;
+      margin-left: 30px;
+      font-size: 14px;
+      font-style: italic;
+
+      &:first-of-type {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  // .l-domen__ip
+  @include e(ip) {
+    margin-bottom: 30px;
+  }
+
+  // .l-domen__stats
+  @include e(stats) {
+    margin-bottom: 40px;
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    td {
+      vertical-align: top;
+      padding-right: 60px;
+      padding-bottom: 15px;
+    }
+  }
+
+  // .l-domen__stat-col
+  @include e(stat-col) {
+
+    // .l-domen__stat-col--left
+    @include m(left) {
+      float: left;
+      width: 70%;
+    }
+
+    // .l-domen__stat-col--right
+    @include m(right) {
+      float: right;
+      width: 30%;
+    }
+  }
+}
+
+// .l-domen-toolbar
+@include b(l-domen-toolbar) {
+
+  // .l-domen-toolbar__col
+  @include e(col) {
+
+    // .l-domen-toolbar__col--left
+    @include m(left) {
+      float: left;
+      margin-top: 30px;
+    }
+
+    // .l-domen-toolbar__col--right
+    @include m(right) {
+      float: right;
+      display: none;
+    }
+  }
+}
+
+// .actions-panel
+@include b(actions-panel) {
+
+  // .actions-panel__col
+  @include e(col) {
+    float: left;
+    min-width: 120px;
+    min-height: 33px;
+    text-transform: uppercase;
+    background-color: #dfdedd;
+    border-right: 1px solid #d8d7d7;
+    position: relative;
+
+    i {
+      background-image: url('../img/sprite.png');
+      background-repeat: no-repeat;
+      background-size: 450px auto;
+      display: inline-block;
+      float: right;
+      content: '';
+      width: 33px;
+      height: 33px;
+    }
+
+    a {
+      line-height: 33px;
+      color: #777;
+      font-weight: 700;
+      font-size: 12px;
+      padding-left: 13px;
+      display: block;
+    }
+  }
+
+  // actions-panel__favorite
+  @include e(favorite) {
+    a {
+      background-color: #afafac;
+      color: #fff;
+    }
+
+    i {
+      background-position: -39px -85px;
+    }
+  }
+
+  // actions-panel__edit
+  @include e(edit) {
+
+    i {
+      background-position: 0 -159px;
+    }
+
+    // actions-panel__edit & hover
+    &:hover a {
+      background-color: #9fbf0c;
+      color: #fff;
+
+      i {
+        background-position: -39px -159px;
+      }
+    }
+
+    // actions-panel__edit & :active
+    &:active {
+      a {
+        background-color: #c0e60f;
+        color: #fff;
+      }
+
+      i {
+        background-position: -77px -159px;
+      }
+    }
+
+    // actions-panel__edit--active
+    @include m(active) {
+      a {
+        background-color: #c0e60f;
+        color: #fff;
+      }
+
+      i {
+        background-position: -77px -159px;
+      }
+    }
+  }
+
+  // actions-panel__logs
+  @include e(logs) {
+
+    i {
+      background-position: 0 -122px;
+    }
+
+    // actions-panel__logs & hover
+    &:hover a {
+      background-color: #afafac;
+      color: #fff;
+
+      i {
+        background-position: -39px -122px;
+      }
+    }
+
+    // actions-panel__logs--active
+    @include m(active) {
+      a {
+        background-color: #55c9c0;
+        color: #fff;
+      }
+
+      i {
+        background-position: -77px -122px;
+      }
+    }
+  }
+
+  // actions-panel__suspend
+  @include e(suspend) {
+
+    i {
+      background-position: 0 -48px;
+    }
+
+    // actions-panel__suspend & hover
+    &:hover a {
+      background-color: #afafac;
+      color: #fff;
+
+      i {
+        background-position: -39px -48px;
+      }
+    }
+
+    // actions-panel__suspend--active
+    @include m(active) {
+      a {
+        background-color: #55c9c0;
+        color: #fff;
+      }
+
+      i {
+        background-position: -77px -48px;
+      }
+    }
+  }
+
+  // actions-panel__delete
+  @include e(delete) {
+
+    i {
+      background-position: 0 -196px;
+    }
+
+    // actions-panel__delete & hover
+    &:hover a {
+      background-color: #ff3438;
+      color: #fff;
+
+      i {
+        background-position: -39px -196px;
+      }
+    }
+
+    // actions-panel__delete--active
+    @include m(active) {
+      a {
+        background-color: #ff5f5f;
+        color: #fff;
+      }
+
+      i {
+        background-position: -77px -196px;
+      }
+    }
+  }
+}
+
+%icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/sprite.png');
+  background-size: 450px auto;
+}
+
+// .l-icon-down-arrow
+@include b(l-icon-down-arrow) {
+  @extend %icon;
+  width: 7px;
+  height: 12px;
+  background-position: -269px -124px;
+}
+
+// .l-icon-star
+@include b(l-icon-star) {
+  @extend %icon;
+  width: 35px;
+  height: 35px;
+  background-position: 0 -85px;
+}
+
+// .l-icon-to-top
+@include b(l-icon-to-top) {
+  @extend %icon;
+  width: 35px;
+  height: 35px;
+  background-position: -316px -64px;
+
+  &:hover {
+    background-position: -353px -64px;
+  }
+
+  &:active {
+    background-position: -390px -64px;
+  }
+}
+
+// .l-icon-star-orange
+@include b(l-icon-star-orange) {
+  @extend %icon;
+  width: 13px;
+  height: 13px;
+  background-position: -178px -97px;
+}
+
+// .l-icon-star-blue
+@include b(l-icon-star-blue) {
+  @extend %icon;
+  width: 13px;
+  height: 13px;
+  background-position: -134px -97px;
+}
+
+.media-top {
+  vertical-align: top;
+}
+
+// .l-percent
+@include b(l-percent) {
+  border-bottom: 1px dotted #ccc;
+  margin-top: 5px;
+
+  // .l-percent__fill
+  @include e(fill) {
+    background-color: #aacc0d;
+    height: 3px;
+    position: relative;
+    bottom: -1px;
+  }
+}
+
+.to-top {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  right: 100px;
 }
