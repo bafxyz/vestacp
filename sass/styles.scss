@@ -667,18 +667,6 @@ input[type="checkbox"]:checked + .check-label:before {
       }
     }
 
-    // actions-panel__edit & :active
-    &:active {
-      a {
-        background-color: #c0e60f;
-        color: #fff;
-      }
-
-      i {
-        background-position: -77px -159px;
-      }
-    }
-
     // actions-panel__edit--active
     @include m(active) {
       a {
